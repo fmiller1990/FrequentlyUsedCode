@@ -1,0 +1,7 @@
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.csprojAssemblyReference.cache
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.csproj.CoreCompileInputs.cache
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\FrequentlyUsedCode.exe.config
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\FrequentlyUsedCode.exe
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\FrequentlyUsedCode.pdb
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.exe
+C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.pdb
