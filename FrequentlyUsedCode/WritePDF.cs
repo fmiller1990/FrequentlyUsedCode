@@ -48,7 +48,7 @@ namespace FrequentlyUsedCode
                     document.Save(OutputFileName);
                     stopTryingToSave = true;
                 }
-                catch (Exception ex) {
+                catch () {
                     //TODO Errorhandling
                     //File is currently opened
                     var mbr = System.Windows.Forms.MessageBox.Show("Bitte schließen sie die Datei\n" + OutputFileName + "\nund klicken sie OK oder brechen sie die Ausgabe ab.", "Datei in Verwendung", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Warning);

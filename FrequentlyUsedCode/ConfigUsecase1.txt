@@ -1,0 +1,12 @@
+﻿############### Config Beispiel Usecase 1:
+# FrequentlyUsedCode/ConfigReader.Run.MinmalExample enthaelt minimales Nutzungsbeispiel.
+# zeigt Kommentar an und wird beim parsen ignoriert.
+# Die Struktur sind verschiedene Gruppen, in denen es dann KeyValuePairs gibt
+
+### Gruppe "TestSektion"
+[TestSektion]
+
+#[Key]=[Value]
+TestKey=TestValue
+TestBool=true
+TestInt=1

@@ -1,0 +1,21 @@
+﻿############### Config Beispiel Usecase 2:
+# FrequentlyUsedCode/ConfigReader.Run.MinmalExample enthaelt minimales Nutzungsbeispiel.
+# zeigt Kommentar an und wird beim parsen ignoriert.
+# Leerzeilen und leerzeichen werden ignoriert.
+
+
+## z.B. um mehrere Rechner zu einer Gruppe zusammenzufassen nuetzlich.
+#[Groups]
+#ComputerId1=Sektion1
+#ComputerId2=Sektion1
+#ComputerId3=Sektion2
+# etc...
+
+[Gruppen]
+TestName=TestSektion
+
+### Gruppe "TestSektion"
+[TestSektion]
+
+#Key=Value
+   TestKey =    TestValue
