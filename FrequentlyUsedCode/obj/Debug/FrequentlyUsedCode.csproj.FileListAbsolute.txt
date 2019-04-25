@@ -5,3 +5,6 @@ C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\Frequen
 C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\FrequentlyUsedCode.pdb
 C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.exe
 C:\Users\Schleuch\source\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.pdb
+C:\Temp\ForeignRepositories\FrequentlyUsedCode\FrequentlyUsedCode\bin\Debug\FrequentlyUsedCode.exe.config
+C:\Temp\ForeignRepositories\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.exe
+C:\Temp\ForeignRepositories\FrequentlyUsedCode\FrequentlyUsedCode\obj\Debug\FrequentlyUsedCode.pdb
