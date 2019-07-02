@@ -9,7 +9,7 @@ namespace FrequentlyUsedCode
     // read write text file textfile streamreader streamwriter stream
     class ReadWriteTextFile
     {
-        public void ReadFile( string path) {
+        public void ReadFile(string path) {
             using (System.IO.StreamReader sr = new System.IO.StreamReader(path)) {
                 if (!System.IO.File.Exists(path)) {
                     //TODO Error handling
@@ -18,6 +18,14 @@ namespace FrequentlyUsedCode
                 while (sr.Peek() >= 0) {
                     string line = sr.ReadLine();
                     //TODO Logic
+                }
+            }
+        }
+
+        public void WriteTextFile(string path, string[] lines) {
+            using (System.IO.StreamWriter sr = new System.IO.StreamWriter(path)) {
+                foreach (var line in lines) {
+                    sr.WriteLine(line);
                 }
             }
         }
