@@ -49,6 +49,7 @@
     <Compile Include="ConfigReader.cs" />
     <Compile Include="FileHandling.cs" />
     <Compile Include="GetPath.cs" />
+    <Compile Include="MatrixRotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReadWriteTextFile.cs" />
