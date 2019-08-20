@@ -1,21 +1,10 @@
 #!/usr/bin/env python3
-import os
-import functools
+from os import devnull
+from functools import wraps
+from itertools import product
 from time import perf_counter
 
-# Use as os-independant /dev/null (os.devnull).
-# Faster then os.devnull because os has overhead to go to os-namespace
-class FakeSink():
-	def write(self, *args):
-		pass
-	def writelines(self, *args):
-		pass
-	def close(self, *args):
-		pass
-	def fileno():
-		return os.open(os.devnull, os.O_RDWR)
-
-class Aux(object):
+class Aux:
 	# Evaluate Function at two boundries
 	def bounds(f, a, b):
 		if a >= b:
@@ -34,15 +23,46 @@ class Aux(object):
 			return (f() for i in iter(int, 1))
 			
 	# times CPU-time for function
-	def timer(file: str):
-		def wrap_file(function):
-			@functools.wraps(function)
-			def wrap_timer(*args, **kwargs):
+	# use: @auxilliaries.Aux.timer(file | None)
+	#      def function_to_time(*args, **kwargs): pass
+	def timer(file):
+		def actual_decorator(function):
+			@wraps(function)
+			def wrapper(*args, **kwargs):
+				loc_file = file
+				if loc_file is None:
+					try:
+						loc_file = getattr(args[0], 'log_file')
+					except:
+						pass
 				t_before = perf_counter()
 				tmp = function(*args, **kwargs)
 				t_after = perf_counter()
-				with open(file, 'a+') as f:
+				with open(loc_file, 'a+') as f:
 					print(f'Finished execution of {function.__name__} in {round(t_after - t_before, 6)} sek.', file=f)
 				return tmp
-			return wrap_timer
-		return wrap_file
+			return wrapper
+		return actual_decorator
+
+		
+	def get_next_nonadjacent(in_list, index, adjacency=(lambda x, y: x==y-1)):
+		# Gets next nonadjacent element from a list
+		while True:
+			if index == len(in_list) - 1: # if index is last element: return length of list
+				return index + 1
+			if adjacency(in_list[index], in_list[index+1]): # sift through as long as adjacent.
+				index += 1
+			else:
+				return index + 1
+
+	def round_down(x):
+		return (x//1)
+
+	def round_up(x):
+		return -(-x//1)
+
+	def prod_dict(**kwargs):
+		keys = kwargs.keys()
+		vals = kwargs.values()
+		for inst in product(*vals):
+			yield dict(zip(keys, inst))
