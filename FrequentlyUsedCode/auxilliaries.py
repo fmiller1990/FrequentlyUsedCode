@@ -5,6 +5,24 @@ from itertools import product
 from time import perf_counter
 
 
+# and one more class to keep information about one issued command:
+class Command:
+    """Information for one Command issued. __init__ separates the command *nix-style."""
+    def __init__(self, text):
+        self.full_text = text
+        comm_separated = Aux._collect_arguments(self.full_text)
+        self.main = comm_separated['main']
+        self.args = comm_separated['args']
+        self.option = comm_separated['option']
+        self.long_option = comm_separated['long_option']
+        if not self.main:
+            raise ValueError("Got an empty command.")
+
+    def __getitem__(self, val):
+        """Forward slicing to args, which is uniquely the only list in Command."""
+        return self.args.__getitem__(val)
+
+
 class Aux:
     # Evaluate Function at two boundries
     def bounds(f, a, b):
