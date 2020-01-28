@@ -1,2 +1,5 @@
+
 .vs/
 *.orig
+
+**/__pycache__/*
