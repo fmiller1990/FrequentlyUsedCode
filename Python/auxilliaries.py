@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from os import devnull
 from functools import wraps
+from collections.abc import Iterable
 from itertools import product
 from time import perf_counter
 
@@ -174,8 +175,25 @@ class Aux:
             int (``x``rounded up)"""
         return -(-x//1)
 
-    def prod_dict(**kwargs):
-        keys = kwargs.keys()
-        vals = kwargs.values()
-        for inst in product(*vals):
+    def prod_dict(in_dict):
+        """Produce a multidimensional cartesian product over a dict.
+
+        INPUTS
+            dict{hashable_type: object or iterator(object)}: The arguments to loop over
+
+        RETURNS
+            generator(dict product over all dimensions)
+                mathematically a multiple cartesian product
+
+        EXAMPLE
+            {'d1': 1, 'd2': (3, 4)} returns
+            gen({'d1': 1, 'd2': 3}, {'d1': 1, 'd2': 4}"""
+        # names of the dimensions
+        keys = in_dict.keys()
+        # value set for the dimensions
+        vals = in_dict.values()
+        # for every product
+        for inst in product(*(el if isinstance(el, Iterable) else (el,)
+                            for el in vals)):
+            # yield a dict that names the dimensions
             yield dict(zip(keys, inst))
